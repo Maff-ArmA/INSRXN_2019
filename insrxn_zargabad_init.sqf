@@ -1,8 +1,3 @@
-waitUntil {isServer || !isNull player};
-waitUntil {!isNil "BIS_MPF_InitDone"};
-	
-onMapSingleClick "vehicle player setpos _pos;";
-player allowDamage false;
 
 INSRXN_fnc_arrayShuffle = { private ["_array","_copy","_result","_index","_randomElement"]; _array	= _this; _copy	= []; { _copy set [count _copy, _x]; } forEach _array; _result	= []; for "_i" from 0 to (count _copy - 1) do { _index = round (random (count _copy - 1)); _randomElement = _copy select _index; _result set [count _result, _randomElement]; _copy set [_index, "REMOVE"]; _copy = _copy - ["REMOVE"]; }; _result; };
 
